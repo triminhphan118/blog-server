@@ -15,6 +15,7 @@ const app = express();
 app.use(
   cors({
     origin: "https://blogpmt.tk",
+    // origin: "http://localhost:3000",
     credentials: true,
   })
 );
@@ -41,6 +42,6 @@ app.use("/api/v1/user", routerUser);
 app.use("/api/v1/category", routerCategory);
 app.use("/api/v1/posts", routerPost);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log("Server is running.");
 });
